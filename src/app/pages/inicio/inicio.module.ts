@@ -8,13 +8,16 @@ import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
 
+import { CalendarModule } from 'ion2-calendar';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioPageRoutingModule
+    InicioPageRoutingModule,
+    CalendarModule
   ],
   declarations: [InicioPage]
 })
-export class InicioPageModule {}
+export class InicioPageModule {
+}

@@ -1,5 +1,7 @@
 {
   "name": "FinalMoviles",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
