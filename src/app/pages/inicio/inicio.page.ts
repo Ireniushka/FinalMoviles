@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CalendarComponentOptions } from 'ion2-calendar';
 
 @Component({
@@ -24,10 +25,11 @@ export class InicioPage implements OnInit {
     date: string;
     type: 'string';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
 
   onChange($event) {
     console.log('Hola');

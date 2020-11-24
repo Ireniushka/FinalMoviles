@@ -4,12 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let c of componentes" [routerLink]="c.redirectTo" detail>
-      <ion-icon slot="start" [name]="c.icon"></ion-icon>
-      <ion-label>{{ c.name }}</ion-label>
-    </ion-item>
-  </ion-list>
-  <br>
+<ion-content padding>
+  
+    <img src="assets/img/fichasionic.png" class="center" alt="fichasionic"/> 
+    <img src="assets/img/crearfichasionic.png" class="center" alt="crearfichasionic"/>
+    <img src="assets/img/asistenciaIonic.png" class="center" alt="asistenciaIonic" routerLink='/calendar'/>
+  
+  
 </ion-content>
+
