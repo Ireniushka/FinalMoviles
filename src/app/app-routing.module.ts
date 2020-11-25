@@ -27,10 +27,11 @@ const routes: Routes = [
   {
     path: 'lists',
     loadChildren: () => import('./pages/lists/lists.module').then( m => m.ListsPageModule)
-  }
-
-
-];
+  },
+  {
+    path: 'create-files',
+    loadChildren: () => import('./pages/create-files/create-files.module').then( m => m.CreateFilesPageModule)
+  },
 
 @NgModule({
   imports: [
