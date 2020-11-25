@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { studentsI } from 'src/app/models/students.interface';
+import { StudentsService } from 'src/app/services/students.service';
 
 @Component({
   selector: 'app-lists',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListsPage implements OnInit {
 
-  constructor() { }
-
+  todos: studentsI[];
+  constructor(private todoService: StudentsService) {}
+  
   ngOnInit() {
+    this.todoService.getTodos().subscribe(res => {
+      this.todos = res;
+    });
   }
-
 }
