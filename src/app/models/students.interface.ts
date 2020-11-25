@@ -4,4 +4,3 @@ export interface studentsI {
     Dia: Date;
     Falta: string;
    }
-   }
