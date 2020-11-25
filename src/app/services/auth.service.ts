@@ -21,6 +21,6 @@ login(email: string, password: string) {
  }
 
  getUserAuth(){
-  return this.AFauth.authState
+  return this.AFauth.authState;
  }
 }
