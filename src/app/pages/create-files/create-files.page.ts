@@ -28,10 +28,11 @@ export class CreateFilesPage implements OnInit {
   }
 
   addFile(){
-    let dia = moment(this.date).format('D MMMM YYYY'); // this.date.toDateString();
+    let dia = moment(this.date).format('YYYY-MM-DD'); // this.date.toDateString();
     this.student = {id: this.ID, // El signo ? es porque se trata de un atributo opcional
       Actividad: this.description,
       Dia: dia};
     this.service.addTodo(this.student);
+    console.log(this.ID);
   }
 }

@@ -24,6 +24,7 @@ export class CalendarPage implements OnInit {
   };
 
   getAlumn(){
+    console.log(this.id);
     this.student.getTodo(this.id).subscribe(res => {
       if ( res.Dia === this.fecha ){
         this.falta = res.Falta;
@@ -64,7 +65,7 @@ export class CalendarPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.authservice.getUserAuth().subscribe(user => this.id = user.uid);
+    this.authservice.getUserAuth().subscribe(user => this.id = user.uid);
   }
 
 }
