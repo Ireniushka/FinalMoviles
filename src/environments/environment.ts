@@ -7,13 +7,13 @@ export const environment = {
 };
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyDK71o5WFm6UM3TFn0TlZKOofsdemJGC-w",
-  authDomain: "prueba-352b8.firebaseapp.com",
-  databaseURL: "https://prueba-352b8.firebaseio.com",
-  projectId: "prueba-352b8",
-  storageBucket: "prueba-352b8.appspot.com",
-  messagingSenderId: "245900203533",
-  appId: "1:245900203533:web:b7f821cb6cb799b863e744"
+  apiKey: 'AIzaSyDK71o5WFm6UM3TFn0TlZKOofsdemJGC-w',
+  authDomain: 'prueba-352b8.firebaseapp.com',
+  databaseURL: 'https://prueba-352b8.firebaseio.com',
+  projectId: 'prueba-352b8',
+  storageBucket: 'prueba-352b8.appspot.com',
+  messagingSenderId: '245900203533',
+  appId: '1:245900203533:web:b7f821cb6cb799b863e744'
 };
 
 /*
