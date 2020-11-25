@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CalendarComponentOptions } from 'ion2-calendar';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-inicio',
@@ -25,9 +27,11 @@ export class InicioPage implements OnInit {
     date: string;
     type: 'string';
 
-  constructor(private router: Router) { }
+    id: string;
+  constructor(private router: Router, private authservice : AuthService) { }
 
   ngOnInit() {
+    this.authservice.getUserAuth().subscribe(user => this.id = user.uid);
   }
 
 
