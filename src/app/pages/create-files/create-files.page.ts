@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { studentsI } from 'src/app/models/students.interface';
 
-// import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-// import { Observable } from 'rxjs';
-// import { studentsI } from 'src/app/models/students.interface';
 import { StudentsService } from 'src/app/services/students.service';
+import { AuthService } from 'src/app/services/auth.service';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-create-files',
@@ -13,25 +13,25 @@ import { StudentsService } from 'src/app/services/students.service';
 })
 export class CreateFilesPage implements OnInit {
   date = new Date();
-  description;
+  description: string;
 
   student: studentsI;
 
-  // private Collection: AngularFirestoreCollection<studentsI>;
-  // private todos: Observable<studentsI[]>;
-  // private db: AngularFirestore;
 
-  private service: StudentsService;
+  ID: string;
 
-  constructor() { }
+
+  constructor(private authservice: AuthService, private service: StudentsService) {}
 
   ngOnInit() {
+    this.authservice.getUserAuth().subscribe(user => this.ID = user.uid);
   }
 
   addFile(){
-    /*this.student = {id: 8, // El signo ? es porque se trata de un atributo opcional
+    let dia = moment(this.date).format('D MMMM YYYY'); // this.date.toDateString();
+    this.student = {id: this.ID, // El signo ? es porque se trata de un atributo opcional
       Actividad: this.description,
-      Dia: this.date};
-    this.service.addTodo(student);*/
+      Dia: dia};
+    this.service.addTodo(this.student);
   }
 }

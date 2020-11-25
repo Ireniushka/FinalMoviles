@@ -14,7 +14,7 @@ export class ListsPage implements OnInit {
   startDate;
   endDate;
   constructor(private todoService: StudentsService) {}
-  
+
   ngOnInit() {
     this.todoService.getTodos().subscribe(res => {
       this.todos = res;
@@ -26,7 +26,7 @@ export class ListsPage implements OnInit {
     const endDate = new Date(this.endDate);
 
     this.todos = this.todos.filter(item => {
-      return isWithinInterval(new Date(item.Dia), {start: startDate, end: endDate})
-    })
+      return isWithinInterval(new Date(item.Dia), {start: startDate, end: endDate});
+    });
   }
 }
