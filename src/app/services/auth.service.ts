@@ -19,4 +19,8 @@ login(email: string, password: string) {
       });
   });
  }
+
+ getUserAuth(){
+  return this.AFauth.authState
+ }
 }
