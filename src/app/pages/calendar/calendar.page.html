@@ -4,9 +4,31 @@
   <div class="ion-padding">
     <ion-calendar
       [(ngModel)]="date"
+      [options]="options"
+      (change)="onChange($event)"
       [type]="type"
-      [format]="'YYYY-MM-DD'">
+      [format]="'YYYY-MM-DD'"
+    >
     </ion-calendar>
   </div>
-  <ion-button routerLink="/date-time" class="boton">Falta justificada</ion-button>
+
+  <ion-card>
+    <ion-card-header class="color">
+      <ion-card-title>Cambiar informacion de asistencia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <br />
+      <ion-label>ID: {{ id }}</ion-label>
+      <br />
+      <ion-label>Fecha: {{ fecha }}</ion-label>
+      <br />
+      <ion-label>{{ falta }}</ion-label>
+      <br>
+
+        <ion-button expand="block" color="danger" (click)="update('Justificada')">Justificada</ion-button>
+        <ion-button expand="block" color="danger" (click)="update('Injustificada')">Injustificada</ion-button>
+        <ion-button expand="block" color="danger" (click)="update('Sin falta')">Sin falta</ion-button>
+ 
+    </ion-card-content>
+  </ion-card>
 </ion-content>
