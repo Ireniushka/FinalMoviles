@@ -5,7 +5,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'inicio',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -13,11 +13,27 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
+    path: 'create-files',
+    loadChildren: () => import('./pages/create-files/create-files.module').then( m => m.CreateFilesPageModule)
+  },
+  {
+    path: 'create-files/:id',
+    loadChildren: () => import('./pages/create-files/create-files.module').then( m => m.CreateFilesPageModule)
+  },
+  {
     path: 'date-time',
     loadChildren: () => import('./pages/date-time/date-time.module').then( m => m.DateTimePageModule)
   },
   {
+    path: 'date-time/:id',
+    loadChildren: () => import('./pages/date-time/date-time.module').then( m => m.DateTimePageModule)
+  },
+  {
     path: 'calendar',
+    loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'calendar/:id',
     loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
   },
   {
@@ -31,8 +47,9 @@ const routes: Routes = [
   {
     path: 'create-files',
     loadChildren: () => import('./pages/create-files/create-files.module').then( m => m.CreateFilesPageModule)
-  },
-]
+  }
+];
+
 
 @NgModule({
   imports: [

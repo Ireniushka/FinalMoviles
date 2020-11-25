@@ -7,35 +7,29 @@
       [options]="options"
       (change)="onChange($event)"
       [type]="type"
-      [format]="'YYYY-MM-DD'">
+      [format]="'YYYY-MM-DD'"
+    >
     </ion-calendar>
   </div>
-  
+  <div >
   <ion-card>
     <ion-card-header class="color">
-      <ion-card-title>Cambiar informacion de asistencia</ion-card-title>    
+      <ion-card-title>Cambiar informacion de asistencia</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <br>
+      <br />
       <ion-label>ID: {{ id }}</ion-label>
-      <br>
+      <br />
       <ion-label>Fecha: {{ fecha }}</ion-label>
+      <br />
+      <ion-label>{{ falta }}</ion-label>
       <br>
-      <ion-label>{{ x }}</ion-label>
 
-      <ion-item>
-      <ion-checkbox color="danger" slot="start" (ionChange)="update('Justificada')"></ion-checkbox>
-      <ion-label> Justificada </ion-label>
-      </ion-item>
-      <ion-item>
-      <ion-checkbox color="danger" slot="start" (ionChange)="update('Injustificada')"></ion-checkbox>
-      <ion-label> Injustificada </ion-label>
-      </ion-item>
-      <ion-item>
-      <ion-checkbox color="danger" slot="start" (ionChange)="update('Sin falta')"></ion-checkbox>
-      <ion-label> Sin falta </ion-label>
-      </ion-item>
+        <ion-button expand="block" color="danger" (click)="update('Justificada')">Justificada</ion-button>
+        <ion-button expand="block" color="danger" (click)="update('Injustificada')">Injustificada</ion-button>
+        <ion-button expand="block" color="danger" (click)="update('Sin falta')">Sin falta</ion-button>
+ 
     </ion-card-content>
   </ion-card>
+  </div>
 </ion-content>
-
