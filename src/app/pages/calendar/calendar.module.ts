@@ -11,6 +11,9 @@ import { CalendarPage } from './calendar.page';
 
 import { CalendarModule } from 'ion2-calendar';
 
+import { StudentsService } from '../../services/students.service';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,4 +25,5 @@ import { CalendarModule } from 'ion2-calendar';
   ],
   declarations: [CalendarPage]
 })
-export class CalendarPageModule {}
+export class CalendarPageModule {
+}

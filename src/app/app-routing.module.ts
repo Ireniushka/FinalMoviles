@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
-  },  {
+  },
+  {
     path: 'date-time',
     loadChildren: () => import('./pages/date-time/date-time.module').then( m => m.DateTimePageModule)
   },
@@ -26,7 +27,7 @@ const routes: Routes = [
   {
     path: 'lists',
     loadChildren: () => import('./pages/lists/lists.module').then( m => m.ListsPageModule)
-  },
+  }
 
 
 ];

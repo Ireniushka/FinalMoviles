@@ -12,21 +12,21 @@ export class StudentsService {
   private todosCollection: AngularFirestoreCollection<studentsI>;
   private todos: Observable<studentsI[]>;
 
-  constructor(db: AngularFirestore) { 
+  constructor(db: AngularFirestore) {
     this.todosCollection = db.collection<studentsI>('alumnos');
-  
+
     this.todos = this.todosCollection.snapshotChanges().pipe(map(
       actions => { // Esto lo hacemos para iterar sobre todos los documentos
         return actions.map(a => {
           const data = a.payload.doc.data();
           const id = a.payload.doc.id;
-      
+
           return { id, ...data };
         });
       }
     ));
   }
-   
+
   getTodos() {
     return this.todos;
   }
@@ -42,7 +42,7 @@ export class StudentsService {
   addTodo(todo: studentsI) {
     return this.todosCollection.add(todo);
   }
-  
+
   removeTodo(id: string) {
     return this.todosCollection.doc(id).delete();
   }
