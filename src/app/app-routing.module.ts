@@ -31,7 +31,8 @@ const routes: Routes = [
   {
     path: 'create-files',
     loadChildren: () => import('./pages/create-files/create-files.module').then( m => m.CreateFilesPageModule)
-  },
+  }
+];
 
 @NgModule({
   imports: [

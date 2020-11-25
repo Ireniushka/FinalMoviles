@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from '../../services/students.service';
+import { studentsI } from '../../models/students.interface';
 
 @Component({
   selector: 'app-calendar',
@@ -12,7 +13,8 @@ export class CalendarPage implements OnInit {
   Nbool = false;
   id = 'admin';
   fecha: string;
-  x: any;
+  falta: any;
+  act: string;
   constructor( private student: StudentsService){ }
 
   options = {
@@ -22,7 +24,8 @@ export class CalendarPage implements OnInit {
   getAlumn(){
     this.student.getTodo(this.id).subscribe(res => {
       if ( res.Dia === this.fecha ){
-        this.x = res.Falta;
+        this.falta = res.Falta;
+        this.act = res.Actividad;
         if (res.Falta === 'Justificada'){
           this.Jbool = true;
           this.Ibool = false;
@@ -40,21 +43,22 @@ export class CalendarPage implements OnInit {
         }
       }
       else{
-        this.x = 'No se ha encontrado resultado';
+        this.falta = 'No se ha encontrado resultado';
       }
     });
   }
 
   onChange($event){
-    this.x = '';
+    this.falta = '';
     this.fecha = $event.format('YYYY-MM-DD');
     this.getAlumn();
   }
 
   update($event){
-    console.log($event);
-    // objeto 
-    // this.student.updateTodo(,this.id)
+    let stu: studentsI;
+    stu = {Actividad: this.act, Dia: this.fecha, Falta: $event};
+    this.student.updateTodo(stu, this.id);
+    this.getAlumn();
   }
 
   ngOnInit() {
