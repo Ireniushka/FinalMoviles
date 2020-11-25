@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from '../../services/students.service';
 import { studentsI } from '../../models/students.interface';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-calendar',
@@ -11,11 +12,12 @@ export class CalendarPage implements OnInit {
   Jbool = false;
   Ibool = false;
   Nbool = false;
-  id = 'admin';
+  id: string;
   fecha: string;
   falta: any;
   act: string;
-  constructor( private student: StudentsService){ }
+
+  constructor( private student: StudentsService, private authservice: AuthService){ }
 
   options = {
     canBackwardsSelected: true,
@@ -62,6 +64,7 @@ export class CalendarPage implements OnInit {
   }
 
   ngOnInit() {
+    // this.authservice.getUserAuth().subscribe(user => this.id = user.uid);
   }
 
 }

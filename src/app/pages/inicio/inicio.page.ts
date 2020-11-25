@@ -28,7 +28,7 @@ export class InicioPage implements OnInit {
     type: 'string';
 
     id: string;
-  constructor(private router: Router, private authservice : AuthService) { }
+  constructor(private router: Router, private authservice: AuthService) { }
 
   ngOnInit() {
     this.authservice.getUserAuth().subscribe(user => this.id = user.uid);
